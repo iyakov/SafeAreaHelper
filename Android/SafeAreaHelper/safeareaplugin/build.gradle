@@ -3,6 +3,8 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
 
+
+
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
@@ -19,6 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -33,6 +36,6 @@ dependencies {
 task copyPlugin(type: Copy) {
     dependsOn assemble
     from('build/outputs/aar')
-    into('../../../../../../Unity/SafeAreaHelper/Assets/SafeAreaHelper/Plugins/Android')
+    into('../../../Unity/SafeAreaHelper/Assets/SafeAreaHelper/Plugins/Android')
     include (project.name + '-release.aar')
 }

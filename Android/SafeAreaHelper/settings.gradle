@@ -1,1 +1,1 @@
-include ':app', ':safearea'
+include ':app', ':safearea', ':safeareaplugin'

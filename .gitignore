@@ -10,3 +10,6 @@ Unity/\.DS_Store
 Android/SafeAreaHelper/\.idea/
 
 Unity/SafeAreaHelper/Temp/
+Unity/SafeAreaHelper/Builds/
+Unity/SafeAreaHelper/obj/
+Unity/SafeAreaHelper/.vs/

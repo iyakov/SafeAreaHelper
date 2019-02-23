@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198778033}
   - component: {fileID: 198778032}
+  - component: {fileID: 198778031}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -129,6 +130,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &198778031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198778030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7895365c180654abed8ca32f9859c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &198778032
 Camera:
   m_ObjectHideFlags: 0
