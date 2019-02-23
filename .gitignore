@@ -6,3 +6,7 @@ Unity/SafeAreaHelper/Logs/
 Unity/\.DS_Store
 
 \.DS_Store
+
+Android/SafeAreaHelper/\.idea/
+
+Unity/SafeAreaHelper/Temp/
