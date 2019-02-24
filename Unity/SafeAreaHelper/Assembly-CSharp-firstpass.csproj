@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>Fgol</RootNamespace>
-    <ProjectGuid>{073687D4-F71F-6A54-ECE6-68B5DB5FC694}</ProjectGuid>
+    <ProjectGuid>{3A332366-6657-5D12-FC39-39CF518A20ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2018.3.6f1</UnityVersion>
   </PropertyGroup>
@@ -60,12 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SafeArea\Plugins\Scripts\ISafeAreaHelper.cs" />
-    <Compile Include="Assets\SafeArea\Plugins\Scripts\SafeArea.cs" />
-    <Compile Include="Assets\SafeArea\Plugins\Scripts\SafeAreaHelperAndroidImplementation.cs" />
-    <Compile Include="Assets\SafeArea\Plugins\Scripts\SafeAreaHelperExample.cs" />
-    <Compile Include="Assets\SafeArea\Plugins\Scripts\SafeAreaPlugin.cs" />
-    <None Include="Assets\SafeArea\Plugins\Android\AndroidManifest.xml" />
+    <Compile Include="Assets\Plugins\Scripts\ISafeAreaHelper.cs" />
+    <Compile Include="Assets\Plugins\Scripts\NotchSizes.cs" />
+    <Compile Include="Assets\Plugins\Scripts\SafeAreaHelperAndroidImplementation.cs" />
+    <Compile Include="Assets\Plugins\Scripts\SafeAreaHelperExample.cs" />
+    <Compile Include="Assets\Plugins\Scripts\SafeAreaPlugin.cs" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>D:/Projects/unity/SafeAreaHelper/Unity/SafeAreaHelper/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
