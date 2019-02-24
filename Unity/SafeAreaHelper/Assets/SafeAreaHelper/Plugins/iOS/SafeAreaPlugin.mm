@@ -23,8 +23,8 @@ static SafeAreaPlugin *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, 
         ^{
-            NSLog("@================== get instance ===============")
-            sharedInstance = [[SafeAreaPlugin] init];
+            NSLog(@"================== get instance ===============");
+            sharedInstance = [[SafeAreaPlugin alloc] init];
         }
     );
     return sharedInstance;
@@ -42,12 +42,24 @@ static SafeAreaPlugin *sharedInstance;
 
 -(void)initHelper
 {
-    NSLog("@================== plugin ctor ===============")
+    NSLog(@"================== plugin ctor ===============");
 }
 
 +(void)demoCall
 {
-    NSLog("@================== DEMO CALL ===============")
+    NSLog(@"================== DEMO CALL ===============");
 }
 
 @end
+
+extern "C"
+{
+    void DemoCall1()
+    {
+        return [[SafeAreaPlugin sharedInstance] demoCall];
+    }
+    void DemoCall2()
+    {
+        return [SafeAreaPlugin demoCall];
+    }
+}

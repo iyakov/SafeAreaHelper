@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class SafeAreaHelper : MonoBehaviour
@@ -88,9 +89,18 @@ public class SafeAreaHelper : MonoBehaviour
 
 #elif UNITY_IOS
 
+    [DllImport("__Internal")]
+    private static extern void DemoCall1();
+
+    [DllImport("__Internal")]
+    private static extern void DemoCall2();
+
     IEnumerable Start()
     {
-        yield return null;
+        yield return new WaitForSeconds(1f);
+        DemoCall1();
+        yield return new WaitForSeconds(1f);
+        DemoCall2();
     }
 
 #endif
