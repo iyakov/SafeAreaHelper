@@ -7,11 +7,15 @@ public class SafeAreaHelperExample : MonoBehaviour
     private ISafeAreaHelper safeAreaHelper;
     private NotchSizes previousNotchSizes;
 
+#pragma warning disable 0649
+
     [SerializeField]
     private RectTransform safeAreaRectTransform;
 
     [SerializeField]
     private Text safeAreaText;
+
+#pragma warning restore 0649
 
     private void Start()
     {

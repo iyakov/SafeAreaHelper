@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
 
 @interface SafeAreaPlugin : NSObject
+{
 
+}
 @end
 
 @implementation SafeAreaPlugin
@@ -13,7 +15,7 @@ static SafeAreaPlugin *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, 
         ^{
-            NSLog(@"================== get instance ===============");
+            NSLog(@"[FGOL]================== get instance ===============");
             sharedInstance = [[SafeAreaPlugin alloc] init];
         }
     );
@@ -32,12 +34,12 @@ static SafeAreaPlugin *sharedInstance;
 
 -(void)initHelper
 {
-    NSLog(@"================== plugin ctor ===============");
+    NSLog(@"[FGOL]================== plugin ctor ===============");
 }
 
 +(void)demoCall
 {
-    NSLog(@"================== DEMO CALL ===============");
+    NSLog(@"[FGOL]================== DEMO CALL ===============");
 }
 
 @end
