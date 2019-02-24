@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace FGOL.SafeAreaHelper
 {
-    internal sealed class SafeAreaHelperiOSImplementation : ISafeAreaHelper
+    internal sealed class SafeAreaHelperIosImplementation : ISafeAreaHelper
     {
         [DllImport("__Internal")]
         public static extern void DemoCall1();
