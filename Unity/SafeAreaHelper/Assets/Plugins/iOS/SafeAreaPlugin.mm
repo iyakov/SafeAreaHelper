@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SafeAreaPlugin : NSObject
-{
 
-}
 @end
 
 @implementation SafeAreaPlugin
@@ -56,7 +54,7 @@ extern "C"
 {
     void DemoCall1()
     {
-        return [[SafeAreaPlugin sharedInstance] demoCall];
+        [[SafeAreaPlugin sharedInstance] initHelper];
     }
     void DemoCall2()
     {
