@@ -13,3 +13,4 @@ Unity/SafeAreaHelper/.vs/
 *.csproj
 *.sln
 *.user
+\.DS_Store
