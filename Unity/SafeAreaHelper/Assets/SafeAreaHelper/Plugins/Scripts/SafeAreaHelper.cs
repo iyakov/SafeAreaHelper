@@ -90,6 +90,7 @@ public class SafeAreaHelper : MonoBehaviour
 
     IEnumerable Start()
     {
+        yield return null;
     }
 
 #endif
