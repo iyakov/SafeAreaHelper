@@ -10,4 +10,9 @@
 
 @implementation SafeAreaHelper
 
++(void)demoCall
+{
+    NSLog(@"================== DEMO CALL ===============");
+}
+
 @end
