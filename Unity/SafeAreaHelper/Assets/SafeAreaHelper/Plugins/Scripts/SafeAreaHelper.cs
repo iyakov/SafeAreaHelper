@@ -85,6 +85,13 @@ public class SafeAreaHelper : MonoBehaviour
             return $"({left},{top},{right},{bottom})";
         }
     }
+
+#elif UNITY_IOS
+
+    IEnumerable Start()
+    {
+    }
+
 #endif
 
 }
