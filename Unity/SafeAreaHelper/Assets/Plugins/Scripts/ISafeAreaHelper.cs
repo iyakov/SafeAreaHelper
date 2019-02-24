@@ -1,5 +1,8 @@
 ﻿namespace FGOL.SafeAreaHelper
 {
+    /// <summary>
+    /// Allows to get 
+    /// </summary>
     public interface ISafeAreaHelper
     {
         /// <summary>
@@ -10,6 +13,6 @@
         /// <summary>
         /// Safe are margins
         /// </summary>
-        NotchSizes SafeArea { get; }
+        NotchSizes NotchSizes { get; }
     }
 }

@@ -1,17 +1,15 @@
 
-Unity/SafeAreaHelper/Library/
-
-Unity/SafeAreaHelper/Logs/
-
-Unity/\.DS_Store
-
-\.DS_Store
+**/\.DS_Store/
 
 Android/SafeAreaHelper/\.idea/
 
+Unity/SafeAreaHelper/Library/
+Unity/SafeAreaHelper/Logs/
 Unity/SafeAreaHelper/Temp/
 Unity/SafeAreaHelper/Builds/
 Unity/SafeAreaHelper/obj/
 Unity/SafeAreaHelper/.vs/
 
-Unity/SafeAreaHelper/Assembly-CSharp\.csproj\.user
+*.csproj
+*.sln
+*.user

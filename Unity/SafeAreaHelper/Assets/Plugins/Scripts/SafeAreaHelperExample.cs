@@ -1,33 +1,53 @@
 ﻿using FGOL.SafeAreaHelper;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SafeAreaHelperExample : MonoBehaviour
 {
+    private ISafeAreaHelper safeAreaHelper;
+    private NotchSizes previousNotchSizes;
+
+    [SerializeField]
+    private RectTransform safeAreaRectTransform;
+
+    [SerializeField]
+    private Text safeAreaText;
+
     private void Start()
     {
-        Debug.LogError("[FGOL] ===>> START <<===");
-        ISafeAreaHelper helper = SafeAreaPlugin.Create();
-        var x = helper.IsInitialized;
-        var z = helper.SafeArea;
-        Debug.LogError("[FGOL] ===>>  END  <<===");
+        Debug.LogError("[FGOL] Using a plugin here.");
+        safeAreaHelper = new SafeAreaHelperFactory().Create();
     }
 
-#if UNITY_IOS
-    
-    [DllImport("__Internal")]
-    private static extern void DemoCall1();
-
-    [DllImport("__Internal")]
-    private static extern void DemoCall2();
-
-    IEnumerable Start()
+    private void Update()
     {
-        yield return new WaitForSeconds(1f);
-        DemoCall1();
-        yield return new WaitForSeconds(1f);
-        DemoCall2();
+        if (safeAreaHelper.IsInitialized)
+        {
+            NotchSizes newNotchSizes = safeAreaHelper.NotchSizes;
+
+            if (newNotchSizes != previousNotchSizes)
+            {
+                previousNotchSizes = newNotchSizes;
+
+                ShowNotchSizesOnScreen(newNotchSizes);
+                UpdateSafeAreaRect(newNotchSizes);
+            }
+        }
     }
 
-#endif
+    private void ShowNotchSizesOnScreen(NotchSizes newNotchSizes)
+    {
+        safeAreaText.text = newNotchSizes.ToString();
+    }
 
+    private void UpdateSafeAreaRect(NotchSizes newNotchSizes)
+    {
+        safeAreaRectTransform.anchoredPosition = new Vector2(
+            (newNotchSizes.Left - newNotchSizes.Right) / 2f,
+            (newNotchSizes.Bottom - newNotchSizes.Top) / 2);
+
+        safeAreaRectTransform.sizeDelta = new Vector2(
+            -(newNotchSizes.Left + newNotchSizes.Right),
+            -(newNotchSizes.Top + newNotchSizes.Bottom));
+    }
 }

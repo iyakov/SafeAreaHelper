@@ -1,10 +1,12 @@
 ﻿namespace FGOL.SafeAreaHelper
 {
-    public static class SafeAreaPlugin
+    public sealed class SafeAreaHelperFactory
     {
-        public static ISafeAreaHelper Create()
+        public ISafeAreaHelper Create()
         {
-#if UNITY_IOS
+#if UNITY_EDITOR
+            return new SafeAreaHelperDefaultImplementation();
+#elif UNITY_IOS
             return new SafeAreaHelperIosImplementation();
 #elif UNITY_ANDROID
             return new SafeAreaHelperAndroidImplementation();
