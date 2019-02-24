@@ -158,7 +158,7 @@ PlayerSettings:
     iOS: com.fgol.safearea
   buildNumber:
     Standalone: 2
-    iOS: 2
+    iOS: 3
   AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
@@ -174,7 +174,7 @@ PlayerSettings:
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 1
   VertexChannelCompressionMask: -1
-  iPhoneSdkVersion: 989
+  iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 9.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
