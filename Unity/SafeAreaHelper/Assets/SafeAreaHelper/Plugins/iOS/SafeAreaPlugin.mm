@@ -8,6 +8,9 @@ extern "C"
     //
     bool GetIsInitialized()
     {
+        //Note! The brand new iPadPro2018 may not initialize intents at the 
+        // startup. I'm not sure how to check this behaviour yet. It might
+        // be just a bad luck on my previous project.
         return true;
     }
     
