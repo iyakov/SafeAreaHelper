@@ -12,12 +12,20 @@ extern "C"
     }
     
     //
-	// Returns device screen scale factor
+    // Returns device screen scale factor
     //
     float GetScaleFactor() 
     {
         return [[UIScreen mainScreen] scale];
     }
+    
+    // Marshaling structure
+    typedef struct rect {
+        float top;
+        float right;
+        float bottom;
+        float left;
+    } rect;
     
     //
     // Returns the device's notch insets
@@ -37,13 +45,5 @@ extern "C"
         
         return result;
     }
-    
-    // Marshaling structure
-    typedef struct rect {
-        float top;
-        float right;
-        float bottom;
-        float left;
-    } rect;
     
 }
