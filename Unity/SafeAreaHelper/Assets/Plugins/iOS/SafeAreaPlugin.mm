@@ -3,58 +3,47 @@
 
 extern "C"
 {
+    //
+    // Shows if the plugin shows the valid data
+    //
     bool GetIsInitialized()
     {
         return true;
     }
     
+    //
 	// Returns device screen scale factor
+    //
     float GetScaleFactor() 
     {
         return [[UIScreen mainScreen] scale];
     }
-
-    float GetNotchTop()
+    
+    //
+    // Returns the device's notch insets
+    //
+    rect GetNotch()
     {
+        rect result;
+    
         if (@available(iOS 11.0, *)) 
         {
             UIWindow *window = UIApplication.sharedApplication.keyWindow;
-            return window.safeAreaInsets.top;
+            result.top = window.safeAreaInsets.top;
+            result.bottom = window.safeAreaInsets.bottom;
+            result.right = window.safeAreaInsets.right;
+            result.left = window.safeAreaInsets.left;
         }
         
-        return 0;
+        return result;
     }
-
-    float GetNotchRight()
-    {
-        if (@available(iOS 11.0, *)) 
-        {
-            UIWindow *window = UIApplication.sharedApplication.keyWindow;
-            return window.safeAreaInsets.right;
-        }
-        
-        return 0;
-    }
-
-    float GetNotchBottom()
-    {
-        if (@available(iOS 11.0, *)) 
-        {
-            UIWindow *window = UIApplication.sharedApplication.keyWindow;
-            return window.safeAreaInsets.bottom;
-        }
-        
-        return 0;
-    }
-
-    float GetNotchLeft()
-    {
-        if (@available(iOS 11.0, *)) 
-        {
-            UIWindow *window = UIApplication.sharedApplication.keyWindow;
-            return window.safeAreaInsets.left;
-        }
-        
-        return 0;
-    }
+    
+    // Marshaling structure
+    typedef struct rect {
+        float top;
+        float right;
+        float bottom;
+        float left;
+    } rect;
+    
 }

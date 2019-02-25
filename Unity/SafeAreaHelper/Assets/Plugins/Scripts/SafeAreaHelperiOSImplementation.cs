@@ -1,4 +1,4 @@
-﻿#if UNITY_IOS
+#if UNITY_IOS
 
 using System.Runtime.InteropServices;
 
@@ -10,16 +10,13 @@ namespace FGOL.SafeAreaHelper
         public static extern bool GetIsInitialized();
 
         [DllImport("__Internal")]
-        public static extern float GetNotchTop();
-        [DllImport("__Internal")]
-        public static extern float GetNotchBottom();
-        [DllImport("__Internal")]
-        public static extern float GetNotchRight();
-        [DllImport("__Internal")]
-        public static extern float GetNotchLeft();
+        public static extern MarshalRect GetNotch();
 
         [DllImport("__Internal")]
         private static extern float GetScaleFactor();
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct MarshalRect { public float top, right, bottom, left; }
 
         public bool IsInitialized
         {
@@ -33,14 +30,14 @@ namespace FGOL.SafeAreaHelper
         {
             get
             {
+                MarshalRect result = GetNotch();
                 NotchSizes notch = new NotchSizes
                 {
-                    Top = (int)GetNotchTop(),
-                    Bottom = (int)GetNotchBottom(),
-                    Right = (int)GetNotchRight(),
-                    Left = (int)GetNotchLeft()
+                    Top = (int)result.top,
+                    Right = (int)result.right,
+                    Bottom = (int)result.bottom,
+                    Left = (int)result.left,
                 };
-
                 return notch;
             }
         }
