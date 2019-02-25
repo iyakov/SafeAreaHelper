@@ -1,4 +1,4 @@
-﻿namespace FGOL.SafeAreaHelper
+namespace FGOL.SafeAreaHelper
 {
     /// <summary>
     /// Allows to get 
@@ -16,7 +16,7 @@
         NotchSizes NotchSizes { get; }
 
         /// <summary>
-        /// Scale factor
+        /// Scale factor of a device's display
         /// </summary>
         float ScaleFactor { get; }
     }

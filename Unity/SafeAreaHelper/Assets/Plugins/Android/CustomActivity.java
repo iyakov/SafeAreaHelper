@@ -17,8 +17,6 @@ public class CustomActivity extends UnityPlayerActivity
         super.onCreate(savedInstanceState);
         notchSizes = new NotchSizes();
 
-        //TODO: Do proper testing and/or implementation of getting a notch sizes below
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) 
         {
             Log.d("Unity", "[FGOL] Subscribing for OnApplyWindowInsets");
@@ -41,13 +39,11 @@ public class CustomActivity extends UnityPlayerActivity
 
     public boolean IsInitialized()
     {
-        Log.d("Unity", "[FGOL] Call IsInitialized");
         return isInitialized;
     }
 
     public NotchSizes GetNotchSizes()
     {
-        Log.d("Unity", "[FGOL] Call GetInsets");
         return notchSizes;
     }
 }

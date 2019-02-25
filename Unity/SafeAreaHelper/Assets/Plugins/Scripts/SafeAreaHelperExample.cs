@@ -1,4 +1,4 @@
-﻿using FGOL.SafeAreaHelper;
+using FGOL.SafeAreaHelper;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +19,6 @@ public class SafeAreaHelperExample : MonoBehaviour
 
     private void Start()
     {
-        Debug.LogError("[FGOL] Using a plugin here.");
         safeAreaHelper = new SafeAreaHelperFactory().Create();
     }
 
