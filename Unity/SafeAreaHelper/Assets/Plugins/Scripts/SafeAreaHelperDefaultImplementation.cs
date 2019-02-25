@@ -7,5 +7,7 @@
         public bool IsInitialized => true;
 
         public NotchSizes NotchSizes => DefaultSafeArea;
+
+        public float ScaleFactor => 1.0f;
     }
 }

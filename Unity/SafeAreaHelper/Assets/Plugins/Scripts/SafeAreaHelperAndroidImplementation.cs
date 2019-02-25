@@ -63,6 +63,14 @@ namespace FGOL.SafeAreaHelper
                 return result;
             }
         }
+
+        public float ScaleFactor
+        {
+            get
+            {
+                return Screen.dpi / 160.0f;
+            }
+        }
     }
 }
 

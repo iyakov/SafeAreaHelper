@@ -14,5 +14,10 @@
         /// Safe are margins
         /// </summary>
         NotchSizes NotchSizes { get; }
+
+        /// <summary>
+        /// Scale factor
+        /// </summary>
+        float ScaleFactor { get; }
     }
 }

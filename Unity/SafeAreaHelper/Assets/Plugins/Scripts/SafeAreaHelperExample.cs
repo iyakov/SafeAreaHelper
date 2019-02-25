@@ -52,6 +52,12 @@ public class SafeAreaHelperExample : MonoBehaviour
 
         safeAreaRectTransform.sizeDelta = new Vector2(
             -(newNotchSizes.Left + newNotchSizes.Right),
-            -(newNotchSizes.Top + newNotchSizes.Bottom));
+            -(newNotchSizes.Bottom + newNotchSizes.Top));
+
+        //TODO: convert device's points into Unity's units
+        // var deviceOffsetTop = newNotchSizes.Top * safeAreaHelper.ScaleFactor / Camera.main.pixelHeight;
+        // var rootCanvas = GetComponent<RectTransform>().GetComponentInParent<Canvas>().rootCanvas;
+        // var canvasSize = rootCanvas.gameObject.GetComponent<RectTransform>().rect.size;
+        // var unityOffsetTop = canvasSize.y * deviceOffsetTop;
     }
 }

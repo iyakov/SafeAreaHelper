@@ -1,57 +1,60 @@
 #import <Foundation/Foundation.h>
-
-@interface SafeAreaPlugin : NSObject
-{
-
-}
-@end
-
-@implementation SafeAreaPlugin
-
-static SafeAreaPlugin *sharedInstance;
-
-+(SafeAreaPlugin*) sharedInstance
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, 
-        ^{
-            NSLog(@"[FGOL]================== get instance ===============");
-            sharedInstance = [[SafeAreaPlugin alloc] init];
-        }
-    );
-    return sharedInstance;
-}
-
--(id)init
-{
-    self = [super init];
-    if(self)
-    {
-        [self initHelper];
-    }
-    return self;
-}
-
--(void)initHelper
-{
-    NSLog(@"[FGOL]================== plugin ctor ===============");
-}
-
-+(void)demoCall
-{
-    NSLog(@"[FGOL]================== DEMO CALL ===============");
-}
-
-@end
+#import <UIKit/UIKit.h>
 
 extern "C"
 {
-    void DemoCall1()
+    bool GetIsInitialized()
     {
-        [[SafeAreaPlugin sharedInstance] initHelper];
+        return true;
     }
-    void DemoCall2()
+    
+	// Returns device screen scale factor
+    float GetScaleFactor() 
     {
-        return [SafeAreaPlugin demoCall];
+        return [[UIScreen mainScreen] scale];
+    }
+
+    float GetNotchTop()
+    {
+        if (@available(iOS 11.0, *)) 
+        {
+            UIWindow *window = UIApplication.sharedApplication.keyWindow;
+            return window.safeAreaInsets.top;
+        }
+        
+        return 0;
+    }
+
+    float GetNotchRight()
+    {
+        if (@available(iOS 11.0, *)) 
+        {
+            UIWindow *window = UIApplication.sharedApplication.keyWindow;
+            return window.safeAreaInsets.right;
+        }
+        
+        return 0;
+    }
+
+    float GetNotchBottom()
+    {
+        if (@available(iOS 11.0, *)) 
+        {
+            UIWindow *window = UIApplication.sharedApplication.keyWindow;
+            return window.safeAreaInsets.bottom;
+        }
+        
+        return 0;
+    }
+
+    float GetNotchLeft()
+    {
+        if (@available(iOS 11.0, *)) 
+        {
+            UIWindow *window = UIApplication.sharedApplication.keyWindow;
+            return window.safeAreaInsets.left;
+        }
+        
+        return 0;
     }
 }
