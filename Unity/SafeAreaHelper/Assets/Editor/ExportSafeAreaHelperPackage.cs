@@ -14,21 +14,20 @@ public static class ExportSafeAreaHelperPackage
 
         try
         {
-            string[] includePaths = {
-                "Assets/Plugins",
-                "Assets/Demo.unity" 
-            };
-
             EditorUtility.DisplayProgressBar($"Export package v{Application.version}...", "Exporting...", 0.3f);
 
+            string[] includePaths = { "Assets/SafeAreaHelper" };
             string packageName = $"Builds/SafeAreaHelper.{Application.version}.unitypackage";
+
             AssetDatabase.ExportPackage(includePaths, packageName, ExportPackageOptions.IncludeDependencies | ExportPackageOptions.Recurse);
         }
-        catch(Exception exception)
+        catch (Exception exception)
         {
             EditorUtility.DisplayDialog("Error creating a package!", exception.ToString(), "OK");
         }
-
-        EditorUtility.ClearProgressBar();
+        finally
+        {
+            EditorUtility.ClearProgressBar();
+        }
     }
 }
