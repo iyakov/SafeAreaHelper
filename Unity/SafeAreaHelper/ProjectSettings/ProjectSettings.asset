@@ -158,7 +158,7 @@ PlayerSettings:
     iOS: com.fgol.safearea
   buildNumber:
     Standalone: 2
-    iOS: 4
+    iOS: 5
   AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0

@@ -16,9 +16,9 @@ public class SafeAreaHelper : MonoBehaviour
     {
         implementation = SafeAreaHelperFactory.Create();
 
-        //mainCamera = Camera.main;
-        //rootCanvas = GetComponentInParent<Canvas>().rootCanvas;
-        //rootCanvasRect = rootCanvas.gameObject.GetComponent<RectTransform>();
+        mainCamera = Camera.main;
+        rootCanvas = GetComponentInParent<Canvas>().rootCanvas;
+        rootCanvasRect = rootCanvas.gameObject.GetComponent<RectTransform>();
     }
 
     private void Update()
@@ -35,14 +35,22 @@ public class SafeAreaHelper : MonoBehaviour
         }
     }
 
-    private NotchSizes ConvertDevicePointsToUnityUnits(NotchSizes deviceSizes)
+    private NotchSizes ConvertDevicePointsToUnityUnits(NotchSizes sizeInPoints)
     {
-        //NotchSizes unitySizes; 
-        //float deviceOffsetTop = deviceSizes.Top * implementation.ScaleFactor / mainCamera.pixelHeight;
-        //var canvasSize = rootCanvas.rect.size;
-        //var unityOffsetTop = canvasSize.y * deviceOffsetTop;
-        //unitySizes.Top = (int)unityOffsetTop;
+        NotchSizes sizeInUnits = sizeInPoints; 
 
-        return deviceSizes;
+        Vector2 canvasSize = rootCanvasRect.rect.size;
+        float pointToUnitVerticalCoefficient = canvasSize.y * implementation.ScaleFactor / mainCamera.pixelHeight;
+        float pointToUnitHorizontalCoefficient = canvasSize.x * implementation.ScaleFactor / mainCamera.pixelWidth;
+
+        //TODO: Precision loss
+
+        sizeInUnits.Top = (int)(sizeInPoints.Top * pointToUnitVerticalCoefficient);
+        sizeInUnits.Bottom = (int)(sizeInPoints.Bottom * pointToUnitVerticalCoefficient);
+
+        sizeInUnits.Right = (int)(sizeInPoints.Right * pointToUnitHorizontalCoefficient);
+        sizeInUnits.Left = (int)(sizeInPoints.Left * pointToUnitHorizontalCoefficient);
+
+        return sizeInUnits;
     }
 }
