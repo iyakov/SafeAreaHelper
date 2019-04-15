@@ -1,9 +1,9 @@
 namespace FGOL.SafeAreaHelper
 {
     /// <summary>
-    /// Allows to get 
+    /// Allows to get intents
     /// </summary>
-    public interface ISafeAreaHelper
+    public interface ISafeAreaHelperImplementation
     {
         /// <summary>
         /// Shows if the safe area is initialized by the system
@@ -11,12 +11,12 @@ namespace FGOL.SafeAreaHelper
         bool IsInitialized { get; }
 
         /// <summary>
-        /// Safe are margins
+        /// Safe area margins
         /// </summary>
         NotchSizes NotchSizes { get; }
 
         /// <summary>
-        /// Scale factor of a device's display
+        /// Scale factor of a device display
         /// </summary>
         float ScaleFactor { get; }
     }

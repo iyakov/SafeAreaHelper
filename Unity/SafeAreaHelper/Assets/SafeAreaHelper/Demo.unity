@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 1960611781}
   - component: {fileID: 1960611780}
   - component: {fileID: 1960611779}
+  - component: {fileID: 1960611784}
   - component: {fileID: 1960611783}
   m_Layer: 5
   m_Name: Canvas
@@ -474,8 +475,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca0466c71b73134bad84e476fc1b9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  safeAreaHelper: {fileID: 1960611784}
   safeAreaRectTransform: {fileID: 1202694335}
   safeAreaText: {fileID: 2013304416}
+--- !u!114 &1960611784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960611778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b5103440c074a29a5586ff0e57c3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2013304414
 GameObject:
   m_ObjectHideFlags: 0

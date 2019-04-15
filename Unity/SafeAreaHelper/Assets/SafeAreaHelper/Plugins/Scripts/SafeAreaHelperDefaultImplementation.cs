@@ -1,6 +1,6 @@
 ﻿namespace FGOL.SafeAreaHelper
 {
-    internal sealed class SafeAreaHelperDefaultImplementation : ISafeAreaHelper
+    internal sealed class SafeAreaHelperDefaultImplementation : ISafeAreaHelperImplementation
     {
         private static NotchSizes DefaultSafeArea = new NotchSizes();
 

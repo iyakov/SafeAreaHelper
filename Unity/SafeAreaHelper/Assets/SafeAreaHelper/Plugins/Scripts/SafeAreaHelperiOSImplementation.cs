@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace FGOL.SafeAreaHelper
 {
-    internal sealed class SafeAreaHelperIosImplementation : ISafeAreaHelper
+    internal sealed class SafeAreaHelperIosImplementation : ISafeAreaHelperImplementation
     {
         [DllImport("__Internal")]
         public static extern bool GetIsInitialized();

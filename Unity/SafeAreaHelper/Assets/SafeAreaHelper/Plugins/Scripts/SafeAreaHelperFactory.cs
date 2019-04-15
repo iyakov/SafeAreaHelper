@@ -1,8 +1,12 @@
 ﻿namespace FGOL.SafeAreaHelper
 {
-    public sealed class SafeAreaHelperFactory
+    /// <summary>
+    /// Stateless factory method for SafeAreaHelperImplementation 
+    /// for the currently selected platform.
+    /// </summary>
+    public static class SafeAreaHelperFactory
     {
-        public ISafeAreaHelper Create()
+        public static ISafeAreaHelperImplementation Create()
         {
 #if UNITY_EDITOR
             return new SafeAreaHelperDefaultImplementation();
