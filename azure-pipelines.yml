@@ -11,43 +11,56 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      echo 'Hello world'
+      echo '-------------------------'
+      xcode
+      echo '-------------------------'
+      xcode-select --version
+      echo '-------------------------'
+      cd ~/
+      ls -la
+      echo '-------------------------'
+    noProfile: false
+    noRc: false
 
 - script: |
     echo '-------------------------'
     echo '-------------------------'
     echo '-------------------------'
-    displayName: 'Step 1'
+  displayName: 'Step 1'
     
 - script: |
     echo '-------------------------'
     xcode-select --version
     echo '-------------------------'
-    displayName: 'Step 2'
+  displayName: 'Step 2'
     
 - script: |
     echo '-------------------------'
     xcode
     echo '-------------------------'
-    displayName: 'Step 3'
+  displayName: 'Step 3'
     
 - script: |
     echo '-------------------------'
     /Developer/usr/bin/xcodebuild -version
     echo '-------------------------'
-    displayName: 'Step 4'
+  displayName: 'Step 4'
     
 - script: |
     echo '-------------------------'
-    cd ~/
-    ls -la
-    echo '-------------------------'
-    displayName: 'Step 4'
+  displayName: 'Step 4'
     
 - script: |
     echo '-------------------------'
     echo '-------------------------'
     echo '-------------------------'
-    displayName: 'Step 6'
+  displayName: 'Step 6'
     
 
 #- task: Xcode@5
