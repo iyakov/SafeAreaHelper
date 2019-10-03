@@ -23,14 +23,37 @@ steps:
 
 - script: |
     echo '-------------------------'
+    pwd
     echo 'Listing current directory '
     ls -la
     echo '-------------------------'
     echo 'Listing parent directory '
     cd ..
+    pwd
+    ls -la
+    echo '-------------------------'
+    echo 'Listing parent directory '
+    cd ..
+    pwd
+    ls -la
+    echo '-------------------------'
+    echo 'Listing parent directory '
+    cd ..
+    pwd
     ls -la
     echo '-------------------------'
     displayName: '<<<Directory info>>'
+    
+- script: |
+    echo '-------------------------'
+    xcode-select --version
+    echo '-------------------------'
+    displayName: '<<<Directory info>>'
+    
+- script: |
+    echo '-------------------------'
+    echo '-------------------------'
+    echo '-------------------------'
     
 
 - task: Xcode@5
