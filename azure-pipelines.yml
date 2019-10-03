@@ -13,54 +13,48 @@ pool:
 steps:
 
 - script: |
-    echo 'Current directory is '
-    pwd
-    echo 'Current OS is 1) '
-    system_profiler SPSoftwareDataType
-    echo 'Current OS is 2) '
-    sw_vers
-  displayName: '<<<START>>>'
-
-- script: |
     echo '-------------------------'
-    pwd
-    echo 'Listing current directory '
-    ls -la
     echo '-------------------------'
-    echo 'Listing parent directory '
-    cd ..
-    pwd
-    ls -la
     echo '-------------------------'
-    echo 'Listing parent directory '
-    cd ..
-    pwd
-    ls -la
-    echo '-------------------------'
-    echo 'Listing parent directory '
-    cd ..
-    pwd
-    ls -la
-    echo '-------------------------'
-    displayName: '<<<Directory info>>'
+    displayName: 'Step 1'
     
 - script: |
     echo '-------------------------'
     xcode-select --version
     echo '-------------------------'
-    displayName: '<<<Directory info>>'
+    displayName: 'Step 2'
+    
+- script: |
+    echo '-------------------------'
+    xcode
+    echo '-------------------------'
+    displayName: 'Step 3'
+    
+- script: |
+    echo '-------------------------'
+    /Developer/usr/bin/xcodebuild -version
+    echo '-------------------------'
+    displayName: 'Step 4'
+    
+- script: |
+    echo '-------------------------'
+    cd ~/
+    ls -la
+    echo '-------------------------'
+    displayName: 'Step 4'
     
 - script: |
     echo '-------------------------'
     echo '-------------------------'
     echo '-------------------------'
+    displayName: 'Step 6'
     
 
-- task: Xcode@5
-  inputs:
-    actions: 'build'
-    sdk: 'iphoneos13.1'
-    packageApp: true
-    archivePath: 'TEST.xarchive'
-    signingOption: 'auto'
-    teamId: '7X9ME2T5WH'
+#- task: Xcode@5
+#  inputs:
+#    actions: 'build'
+#    sdk: 'iphoneos13.1'
+#    packageApp: true
+#    archivePath: 'TEST.xarchive'
+#    signingOption: 'auto'
+#    teamId: '7X9ME2T5WH'
