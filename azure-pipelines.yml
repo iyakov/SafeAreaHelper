@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -10,10 +11,33 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo 'Current directory is '
+    pwd
+    echo 'Current OS is 1) '
+    system_profiler SPSoftwareDataType
+    echo 'Current OS is 2) '
+    sw_vers
+  displayName: '<<<START>>>'
+
+- script: |
+    echo '-------------------------'
+    echo 'Listing current directory '
+    ls -la
+    echo '-------------------------'
+    echo 'Listing parent directory '
+    cd ..
+    ls -la
+    echo '-------------------------'
+    displayName: '<<<Directory info>>'
+    
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    sdk: 'iphoneos13.1'
+    packageApp: true
+    archivePath: 'TEST.xarchive'
+    signingOption: 'auto'
+    teamId: '7X9ME2T5WH'
