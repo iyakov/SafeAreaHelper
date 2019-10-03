@@ -11,6 +11,14 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
+
+- task: UnityBuildTask@3
+  inputs:
+    buildTarget: 'iOS'
+    unityProjectPath: 'Unity'
+    outputPath: '$(Build.BinariesDirectory)'
+    outputFileName: 'resultfilename'
+    
 - task: Bash@3
   inputs:
     targetType: 'inline'
