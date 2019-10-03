@@ -15,7 +15,7 @@ steps:
 - task: UnityBuildTask@3
   inputs:
     buildTarget: 'iOS'
-    unityProjectPath: 'Unity'
+    unityProjectPath: 'Unity/SafeAreaHelper'
     outputPath: '$(Build.BinariesDirectory)'
     outputFileName: 'resultfilename'
     
